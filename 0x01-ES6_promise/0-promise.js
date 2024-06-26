@@ -1,3 +1,5 @@
-export default function iterateThroughObject(reportWithIterator) {
-  return reportWithIterator.join(' | ');
+export default function getResponseFromAPI() {
+  return new Promise((resolve) => {
+    resolve('Success');
+  });
 }
