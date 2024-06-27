@@ -2,8 +2,7 @@ import Car from './10-car';
 
 export default class EVCar extends Car {
   constructor(brand, motor, color, range) {
-    super(brand, color);
-    this._motor = motor;
+    super(brand, motor, color); 
     this._range = range;
   }
 
@@ -16,8 +15,12 @@ export default class EVCar extends Car {
   }
 
   cloneCar() {
-    // Return a new Car object
-    return new Car(this.brand, this.color);
+    return new Car();
+  }
+
+  toString() {
+    return `EVCar { _brand: '${this._brand}', _motor: '${this._motor}', _color: '${this._color}', _range: '${this._range}' }`;
   }
 }
+
 
