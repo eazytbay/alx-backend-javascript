@@ -1,11 +1,12 @@
-const cleanSet = (set, startString) => {
-  if (startString === undefined || startString.length === 0) {
-    return '';
-  }
-  return [...set]
-    .filter((parametro) => (parametro !== undefined ? parametro.startsWith(startString) : ''))
-    .map((parametro) => (parametro !== undefined ? parametro.slice(startString.length) : ''))
-    .join('-');
-};
+export default function cleanSet(set, startString) {
+  const rslt = [];
 
-export default cleanSet;
+  for (const name of set) {
+    if (startString && name.startsWith(startString)) {
+      const stringToAppend = name.split(startString).join('');
+      rslt.push(stringToAppend);
+    }
+  }
+
+  return rslt.join('-');
+}
