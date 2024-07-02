@@ -13,7 +13,7 @@ export default function cleanSet(data, startString) {
       // Extract the remaining string after the startString
       const remainingString = value.substring(startString.length);
 
-      // Add the remaining string to filteredValues if it's not empty 
+      // Add the remaining string to filteredValues if it's not empty
       // and not equal to the original value
       if (remainingString && remainingString !== value) {
         filteredValues.push(remainingString);
@@ -24,4 +24,3 @@ export default function cleanSet(data, startString) {
   // Join the filtered values with a hyphen (-) separator
   return filteredValues.join('-');
 }
-
